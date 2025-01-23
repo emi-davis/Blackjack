@@ -4,7 +4,8 @@
 from deck import Deck
 
 def main():
-    deck = Deck()
+    num_decks = int(input("How many decks would you like to use? "))
+    deck = Deck(num_decks)
     deck.printDeck()
 
 if __name__ == "__main__":
