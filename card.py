@@ -1,8 +1,7 @@
 # Card object used in deck.
 
 class Card:
-    def __init__(self, rank, suit, value):
-        self.rank = rank
-        self.suit = suit
+    def __init__(self, name, value, is_ace):
+        self.name = name
         self.value = value
-        self.is_ace = (rank == 'Ace')
+        self.is_ace = is_ace

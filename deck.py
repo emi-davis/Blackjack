@@ -13,17 +13,16 @@ class Deck:
         for suit in self.suits:
             for rank in self.ranks:
                 if rank in ['Jack', 'Queen', 'King']:
-                    count = 10
-                self.cards.append(Card(rank, suit, count))
-                count += 1
-                if count > 10:
-                    count = 1
+                    self.cards.append(Card(f"{rank} of {suit}", 10, False))
+                else:
+                    self.cards.append(Card(f"{rank} of {suit}", count, rank=='Ace'))
+                    count += 1
+                    if count > 10:
+                        count = 1
 
     # DEBUG STATEMENT
     def printDeck(self):
-        #[print(card.rank+' of '+card.suit) for card in self.cards]
-        #print(self.cards[0].is_ace)
-        print([card.value for card in self.cards])
+        print([(card.value, card.name) for card in self.cards])
     # DELETE LATER
 
 deck = Deck()
