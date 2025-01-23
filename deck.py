@@ -9,16 +9,18 @@ class Deck:
     # Creates deck when initialized
     def __init__(self):
         self.cards = []
-        count = 1
+        count = 2
         for suit in self.suits:
             for rank in self.ranks:
                 if rank in ['Jack', 'Queen', 'King']:
                     self.cards.append(Card(f"{rank} of {suit}", 10, False))
+                elif rank == 'Ace':
+                    self.cards.append(Card(f"{rank} of {suit}", 11, True))
                 else:
-                    self.cards.append(Card(f"{rank} of {suit}", count, rank=='Ace'))
+                    self.cards.append(Card(f"{rank} of {suit}", count, False))
                     count += 1
                     if count > 10:
-                        count = 1
+                        count = 2
 
     # DEBUG STATEMENT
     def printDeck(self):
