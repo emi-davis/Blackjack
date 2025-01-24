@@ -22,6 +22,9 @@ class Deck:
                         count += 1
                         if count > 10:
                             count = 2
+    
+    def drawCard(self):
+        return self.cards[0]
 
     # DEBUG STATEMENT
     def printDeck(self):

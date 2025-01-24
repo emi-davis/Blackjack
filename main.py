@@ -2,6 +2,7 @@
 # Last updated 1/22/2025
 
 from deck import Deck
+from player import Player
 
 def main():
     while True:
@@ -14,7 +15,12 @@ def main():
         except ValueError:
             print("Please enter a valid number between 1-6.")
     deck = Deck(num_decks)
-    deck.printDeck()
+
+    player = Player()
+
+    temp = deck.drawCard()
+    player.hand.append(temp)
+    player.printHand()
 
 if __name__ == "__main__":
     main()
