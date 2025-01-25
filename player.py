@@ -3,6 +3,7 @@
 class Player:
     def __init__(self):
         self.hand = []
+        self.split_hand = []
         self.chips = 500 # arbitrary amount of chips 
 
     def printHand(self):
