@@ -1,6 +1,7 @@
-# Deck object 
+# Deck object, contains logic for card creation, drawing from the deck, and shuffling.
 
 from card import Card
+import random
 
 class Deck:
     ranks = ['Ace', 'Two', 'Three', 'Four', 'Five', 'Six', 'Seven', 'Eight', 'Nine', 'Ten', 'Jack', 'Queen', 'King']
@@ -23,8 +24,11 @@ class Deck:
                         if count > 10:
                             count = 2
     
-    def drawCard(self):
+    def drawCard(self): # draw card
         return self.cards[0]
+    
+    def shuffleDeck(self): # shuffle deck
+        random.shuffle(self.cards)
 
     # DEBUG STATEMENT
     def printDeck(self):

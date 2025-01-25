@@ -1,10 +1,13 @@
 # Developed by Emilia
-# Last updated 1/22/2025
+# Last updated 1/24/2025
 
 from deck import Deck
 from player import Player
 
+deck = None
+
 def main():
+    global deck
     while True:
         try:
             num_decks = int(input("How many decks would you like to use? (1-6) "))
@@ -16,11 +19,11 @@ def main():
             print("Please enter a valid number between 1-6.")
     deck = Deck(num_decks)
 
-    player = Player()
+    runGame()
 
-    temp = deck.drawCard()
-    player.hand.append(temp)
-    player.printHand()
-
+def runGame():
+    global deck
+    deck.printDeck()
+    
 if __name__ == "__main__":
     main()
