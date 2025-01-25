@@ -25,13 +25,7 @@ class Deck:
                             count = 2
     
     def drawCard(self): # draw card
-        return self.cards[0]
+        return self.cards.pop(0)
     
-    def shuffleDeck(self): # shuffle deck
+    def shuffleDeck(self): # shuffle
         random.shuffle(self.cards)
-
-    # DEBUG STATEMENT
-    def printDeck(self):
-        print([(card.value, card.name) for card in self.cards])
-        print(len(self.cards))
-    # DELETE LATER
