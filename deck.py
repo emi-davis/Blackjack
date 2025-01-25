@@ -11,18 +11,16 @@ class Deck:
     def __init__(self, num_decks):
         self.cards = []
         for i in range(num_decks): # allows user to choose how many decks to use
-            count = 2
+            count = 1
             for suit in self.suits:
                 for rank in self.ranks:
                     if rank in ['Jack', 'Queen', 'King']:
                         self.cards.append(Card(f"{rank} of {suit}", 10, False)) # face cards are worth 10
-                    elif rank == 'Ace':
-                        self.cards.append(Card(f"{rank} of {suit}", 11, True)) # aces are worth 11
                     else:
-                        self.cards.append(Card(f"{rank} of {suit}", count, False)) # all other cards are worth written value
+                        self.cards.append(Card(f"{rank} of {suit}", count, count==1)) # all other cards are worth written value
                         count += 1
                         if count > 10:
-                            count = 2
+                            count = 1
     
     def drawCard(self): # draw card
         return self.cards.pop(0)

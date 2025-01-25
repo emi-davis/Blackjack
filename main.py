@@ -24,11 +24,10 @@ def main():
     dealer.hand.append(deck.drawCard())
     player.hand.append(deck.drawCard())
     dealer.hand.append(deck.drawCard())
-    print()
     player.printHand()
-    print()
     dealer.printHand()
-    
+    print(player.evaluateHand())
+    print(dealer.evaluateHand())
     
 if __name__ == "__main__":
     main()
