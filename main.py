@@ -26,8 +26,23 @@ def main():
     dealer.hand.append(deck.drawCard())
     player.printHand()
     dealer.printHand()
-    print(player.evaluateHand())
-    print(dealer.evaluateHand())
+    
+    while player.evaluateHand() < 21:
+        match input("Please decide what you would like to do next. (Hit / Stand) ").lower():
+            case 'hit':
+                player.hand.append(deck.drawCard())
+                player.printHand()
+            case 'stand':
+                player.printHand()
+                break
+    
+    player.printHand()
+    
+    while dealer.evaluateHand() < 17:
+        dealer.hand.append(deck.drawCard())
+    
+    dealer.printHand()
+            
     
 if __name__ == "__main__":
     main()
